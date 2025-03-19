@@ -297,3 +297,35 @@ html, body {
         width: 90%;
     }
 }
+/* ===================================================
+   FIXED LEFT EDGE DESIGN ELEMENT
+   =================================================== */
+
+.edge-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px; /* Adjust width as needed */
+    height: 100vh;
+    background: url('../img/edge_left.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.2; /* 20% Transparency */
+    z-index: -1; /* Ensures it stays behind other content */
+    pointer-events: none; /* Prevents interaction interference */
+}
+
+/* ===================================================
+   FIXED RIGHT EDGE DESIGN ELEMENT
+   =================================================== */
+
+.edge-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100px; /* Adjust width as needed */
+    height: 100vh;
+    background: url('../img/edge_right.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.2; /* 20% Transparency */
+    z-index: -1; /* Ensures it stays behind other content */
+    pointer-events: none; /* Prevents interaction interference */
