@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Sets the document type as HTML5 -->
+    <meta charset="UTF-8"> <!-- Defines character encoding to support special characters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsiveness for mobile devices -->
+    
+    <title>One for the Pages</title> <!-- Sets the title of the page as it appears in the browser tab -->
+
+    <!-- Links to external CSS files for styling -->
+    <link rel="stylesheet" href="assets/css/template-styles.css"> <!-- General site-wide styles -->
+    <link rel="stylesheet" href="assets/css/index-styles.css"> <!-- Page-specific styles for the homepage -->
+
+    <!-- Links to Font Awesome for icons (e.g., search icon in the navbar) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- JavaScript Files -->
+    <script defer src="assets/js/product.js"></script> <!-- Handles product data -->
+    <script defer src="assets/js/trending.js"></script> <!-- Fetches and displays trending books dynamically -->
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <!-- Navigation Links to different sections of the website -->
+            <li><a href="index.html">Home</a></li> <!-- Homepage link -->
+            <li><a href="about.html">About Us</a></li> <!-- About Us page -->
+            <li><a href="contact.html">Contact Us</a></li> <!-- Contact page -->
+            <li><a href="categories.html">Book Categories</a></li> <!-- Book categories page -->
+            <li><a href="cart.html">Shopping Cart</a></li> <!-- Shopping cart -->
+            <li><a href="login.html">Login</a></li> <!-- User login page -->
+        </ul>
+        
+        <!-- Search Bar -->
+        <form id="search-form" action="search.html" method="GET">
+            <input type="text" id="search-input" name="query" placeholder="Search books..." required>
+            <!-- Search button using Font Awesome icon -->
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </nav>
+
+    <!-- Hero Section (Top Banner) -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>ONE FOR THE PAGES</h1> <!-- Website title (Main heading) -->
+            <p>EXPLORE OUR COLLECTION</p> <!-- Brief tagline -->
+            <a href="categories.html" class="btn">Browse</a> <!-- Button linking to book categories -->
+        </div>
+    </header>
+
+    <!-- Trending Books Section -->
+    <section class="books-section">
+        <h2>Trending Books</h2> <!-- Section heading -->
+
+        <!-- This div will be dynamically populated with trending books using JavaScript -->
+        <div id="trending-books" class="book-grid"></div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        &copy; 2025 One for the Pages | UP2294517  | <a href="privacy.html">Privacy Policy</a> <!-- Copyright notice, Student ID and privacy policy link -->
+    </footer>
+
+</body>
+</html>
