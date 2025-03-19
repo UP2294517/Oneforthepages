@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Declares the document type as HTML5 -->
+    <meta charset="UTF-8"> <!-- Defines character encoding for special characters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Enables responsiveness for different devices -->
+
+    <title>Login | One for the Pages</title> <!-- Sets the browser tab title -->
+
+    <!-- Linking External CSS Files -->
+    <link rel="stylesheet" href="assets/css/template-styles.css"> <!-- Global styles for the site -->
+    <link rel="stylesheet" href="assets/css/login-styles.css"> <!-- Styles specific to the login page -->
+
+    <!-- FontAwesome Icons for User Interface Elements -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="login-page"> <!-- Assigns a class for login-specific styles -->
+
+    <!-- Decorative Page Edges (Styling Elements) -->
+    <div class="edge-left"></div>
+    <div class="edge-right"></div>
+
+    <!-- Main Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="categories.html">Book Categories</a></li>
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="login.html" class="active">Login</a></li> <!-- Highlights the current page -->
+        </ul>
+
+        <!-- Search Bar: Allows users to search for books -->
+        <form id="search-form" action="search.html" method="GET">
+            <input type="text" id="search-input" name="query" placeholder="Search books..." required>
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </nav>
+
+    <!-- Hero Section (Top Banner) -->
+    <header class="login-hero">
+        <div class="hero-content">
+            <h1>Login</h1> <!-- Page title displayed in the hero section -->
+        </div>
+    </header>
+
+    <!-- Login Section -->
+    <section class="login-section">
+        <div class="login-container">
+            <!-- Login Form -->
+            <form action="dashboard.html" method="POST"> <!-- Redirects user to dashboard after login -->
+                
+                <!-- Email Input Field -->
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                
+                <!-- Password Input Field -->
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                <!-- Login Button -->
+                <button type="submit" class="login-btn">Login</button>
+
+                <!-- Additional Login Options -->
+                <div class="login-options">
+                    <a href="forgot-password.html">Forgot Password?</a> <!-- Forgot Password Link -->
+                    <span> | </span> <!-- Divider -->
+                    <a href="signup.html">Sign Up</a> <!-- Sign Up Link -->
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        &copy; 2025 One for the Pages | UP2294517  | <a href="privacy.html">Privacy Policy</a> <!-- Copyright notice, Student ID and privacy policy link -->
+
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Sets the document type as HTML5 -->
+    <meta charset="UTF-8"> <!-- Defines character encoding to support special characters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsiveness for mobile devices -->
+
+    <title>Book Categories | One for the Pages</title> <!-- Title displayed in the browser tab -->
+
+    <!-- Linking External CSS Files -->
+    <link rel="stylesheet" href="assets/css/template-styles.css"> <!-- Site-wide styling -->
+    <link rel="stylesheet" href="assets/css/categories-styles.css"> <!-- Page-specific styling -->
+
+    <!-- Font Awesome for icons (used in search bar, navigation, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="categories-page">
+
+    <!-- Decorative Page Edges for Design -->
+    <div class="edge-left"></div>
+    <div class="edge-right"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="categories.html" class="active">Book Categories</a></li> <!-- Highlights 'Book Categories' as the active page -->
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+
+        <!-- Search Bar for Book Searches -->
+        <form id="search-form" action="search.html" method="GET">
+            <input type="text" id="search-input" name="query" placeholder="Search Books..." required>
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </nav>
+
+    <!-- Hero Section (Introduction to the Categories Page) -->
+    <header class="categories-hero">
+        <div class="hero-content">
+            <h1>Book Categories</h1> <!-- Page Title -->
+        </div>
+    </header>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <h2>Explore Our Book Collections</h2> <!-- Section Heading -->
+
+        <!-- Grid Layout for Book Categories -->
+        <div class="categories-grid">
+            
+            <!-- Fiction Category -->
+            <div class="category-card">
+                <img src="assets/img/fiction.png" alt="Fiction"> <!-- OpenAI-generated image -->
+                <h2>Fiction</h2>
+                <p>Explore our collection of timeless and modern fiction books.</p>
+                <a href="fiction.html" class="btn">Browse</a> <!-- Link to Fiction Books -->
+            </div>
+
+            <!-- Non-Fiction Category -->
+            <div class="category-card">
+                <img src="assets/img/Non-Fiction.png" alt="Non-Fiction"> <!-- OpenAI-generated image -->
+                <h2>Non-Fiction</h2>
+                <p>Discover books that expand your knowledge and inspire.</p>
+                <a href="Non-Fiction.html" class="btn">Browse</a> <!-- Link to Non-Fiction Books -->
+            </div>
+
+            <!-- Children's Books Category -->
+            <div class="category-card">
+                <img src="assets/img/childrens.png" alt="Children's Books"> <!-- OpenAI-generated image -->
+                <h2>Children's Books</h2>
+                <p>Engaging books for young readers to spark imagination.</p>
+                <a href="childrens.html" class="btn">Browse</a> <!-- Link to Children's Books -->
+            </div>
+
+            <!-- Academic Books Category -->
+            <div class="category-card">
+                <img src="assets/img/academic.png" alt="Academic Books"> <!-- OpenAI-generated image -->
+                <h2>Academic</h2>
+                <p>Resources for students, researchers, and lifelong learners.</p>
+                <a href="academic.html" class="btn">Browse</a> <!-- Link to Academic Books -->
+            </div>
+
+            <!-- Sale Section -->
+            <div class="category-card">
+                <img src="assets/img/sale.png" alt="Sale"> <!-- OpenAI-generated image -->
+                <h2>Sale</h2>
+                <p>Special discounts on selected books for a limited time.</p>
+                <a href="sale.html" class="btn">Browse</a> <!-- Link to Sale Books -->
+            </div>
+
+            <!-- Audiobooks Section -->
+            <div class="category-card">
+                <img src="assets/img/audiobooks.png" alt="Audiobooks"> <!-- OpenAI-generated image -->
+                <h2>Audiobooks</h2>
+                <p>Enjoy books on the go with our digital and audio selections.</p>
+                <a href="Audiobooks.html" class="btn">Browse</a> <!-- Link to Audiobooks -->
+            </div>
+
+        </div>
+    </section>
+
+   <!-- Footer -->
+    <footer class="footer">
+        &copy; 2025 One for the Pages | UP2294517  | <a href="privacy.html">Privacy Policy</a> <!-- Copyright notice, Student ID and privacy link -->
+    </footer>
+
+</body>
+</html>

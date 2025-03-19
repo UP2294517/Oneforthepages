@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Sets the document type as HTML5 -->
+    <meta charset="UTF-8"> <!-- Defines character encoding -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsiveness -->
+
+    <title>Academic | One for the Pages</title> <!-- Title displayed in the browser tab -->
+
+    <!-- Linking External CSS Files -->
+    <link rel="stylesheet" href="assets/css/genres-template-styles.css"> <!-- Shared category styles -->
+    <link rel="stylesheet" href="assets/css/genres-styles.css"> <!-- Specific styles for this page -->
+
+    <!-- Google Fonts for Styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- JavaScript Files -->
+    <script defer src="assets/js/product.js"></script> <!-- Loads product data dynamically -->
+    <script defer src="assets/js/category.js"></script> <!-- Handles category-specific logic -->
+
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="category-page">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="categories.html" class="active">Book Categories</a></li> <!-- Highlights 'Book Categories' -->
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+
+        <!-- Search Bar -->
+        <form id="search-form" action="search.html" method="GET">
+            <input type="text" id="search-input" name="query" placeholder="Search books..." required>
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </nav>
+
+    <!-- Categories Sub-Navigation -->
+    <nav class="sub-navbar">
+        <ul>
+            <li><a href="fiction.html">Fiction</a></li>
+            <li><a href="non-fiction.html">Non-Fiction</a></li>
+            <li><a href="childrens.html">Children's Books</a></li>
+            <li><a href="academic.html" class="active">Academic</a></li> <!-- Active category -->
+            <li><a href="sale.html">Sale</a></li>
+            <li><a href="audiobooks.html">Audiobooks</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="category-hero">
+        <div class="hero-content">
+            <h1>Academic</h1> <!-- Page Title -->
+        </div>
+    </header>
+
+    <!-- Academic Books Section -->
+    <section class="category-section">
+    <h2 style="display: none;">Academic Books</h2>
+
+        <!-- Filters Section -->
+        <aside class="filters">
+            <label for="price">Price:</label>
+            <select id="price">
+                <option value="all">All</option>
+                <option value="low-high">Low to High</option>
+                <option value="high-low">High to Low</option>
+            </select>
+
+            <label for="category-type">Category Type:</label>
+            <select id="category-type">
+                <option value="all">All</option>
+                <option value="mathematics">Mathematics</option>
+                <option value="science">Science</option>
+                <option value="literature">Literature</option>
+            </select>
+
+            <label for="format">Format:</label>
+            <select id="format">
+                <option value="all">All</option>
+                <option value="hardcover">Hardcover</option>
+                <option value="paperback">Paperback</option>
+                <option value="ebook">eBook</option>
+                <option value="audiobooks">Audiobooks</option>
+            </select>
+
+            <label for="rating">Rating:</label>
+            <select id="rating">
+                <option value="all">All</option>
+                <option value="5">5 Stars</option>
+                <option value="4">4+ Stars</option>
+                <option value="3">3+ Stars</option>
+                <option value="2">2+ Stars</option>
+            </select>
+        </aside>
+
+        <!-- Product Listings Section -->
+        <div id="product-grid" class="product-grid"></div> <!-- Books will be dynamically inserted here -->
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2025 One for the Pages | UP2294517  | <a href="privacy.html">Privacy Policy</a> <!-- Copyright notice -->
+    </footer>
+
+    <!-- JavaScript to Populate the Academic Books Section -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const productGrid = document.getElementById("product-grid");
+
+            // Check if the 'books' object exists (from product.js)
+            if (typeof books !== 'undefined') {
+                // Loop through each book and check if it belongs to "Academic"
+                Object.keys(books).forEach(key => {
+                    if (books[key].category === "Academic") {
+                        // Create product card dynamically
+                        const productCard = document.createElement("div");
+                        productCard.classList.add("product-card");
+
+                        // Inject book details into the product card
+                        productCard.innerHTML = `
+                            <a href="product.html?id=${key}">
+                                <img src="${books[key].image}" alt="${books[key].title}">
+                            </a>
+                            <h2><a href="product.html?id=${key}">${books[key].title}</a></h2>
+                            <p>by ${books[key].author}</p>
+                            <p class="price">${books[key].price}</p>
+                            <button class="btn">Add to Cart</button>
+                        `;
+
+                        // Append product card to the grid
+                        productGrid.appendChild(productCard);
+                    }
+                });
+            } else {
+                productGrid.innerHTML = "<p>No books available.</p>";
+            }
+        });
+    </script>
+
+</body>
+</html>

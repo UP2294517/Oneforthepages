@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Sets the document type as HTML5 -->
+    <meta charset="UTF-8"> <!-- Defines character encoding to support special characters -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures responsiveness for mobile devices -->
+
+    <title>Contact Us | One for the Pages</title> <!-- Title displayed in the browser tab -->
+
+    <!-- Linking External CSS Files -->
+    <link rel="stylesheet" href="assets/css/template-styles.css"> <!-- Site-wide styling -->
+    <link rel="stylesheet" href="assets/css/contact-styles.css"> <!-- Page-specific styling -->
+
+    <!-- Font Awesome for icons (used in search bar, social media, etc.) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body class="contact-page">
+
+    <!-- Decorative Page Edges for Design -->
+    <div class="edge-left"></div>
+    <div class="edge-right"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html" class="active">Contact Us</a></li> <!-- Highlights 'Contact Us' as the active page -->
+            <li><a href="categories.html">Book Categories</a></li>
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+
+        <!-- Search Bar for Book Searches -->
+        <form id="search-form" action="search.html" method="GET">
+            <input type="text" id="search-input" name="query" placeholder="Search books..." required>
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </nav>
+
+    <!-- Hero Section (Introduction to the Contact Page) -->
+    <header class="contact-hero">
+        <div class="hero-content">
+            <h1>Contact Us</h1> <!-- Page Title -->
+            <p>Reach out through the form below or connect via our social media.</p> <!-- Brief introduction -->
+        </div>
+    </header>
+
+    <!-- Contact Us Section -->
+    <section class="contact-section">
+        <div class="container">
+            <h2>We'd love to hear from you</h2> <!-- Section Heading -->
+            <p>Have any questions or suggestions? Fill out the form below or reach out through our social media.</p>
+
+            <!-- Contact Form -->
+            <form class="contact-form" action="#" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required> <!-- Name Input -->
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required> <!-- Email Input -->
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea> <!-- Message Input -->
+
+                <button type="submit">Send Message</button> <!-- Submit Button -->
+            </form>
+
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2>Visit Us</h2>
+                <p>42 Winston Churchill Ave, Southsea, Portsmouth PO1 2UP</p> <!-- Business Address -->
+                <p>Email: <a href="mailto:contact@oneforthepages.co.uk">contact@oneforthepages.co.uk</a></p> <!-- Contact Email -->
+                <p>Phone: +44 23 9876 5432</p> <!-- Phone Number -->
+
+                <!-- Social Media Links -->
+                <div class="social-media">
+                    <h2>Follow Us</h2>
+                    <a href="https://facebook.com/OneForThePages" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+                    <a href="https://twitter.com/OneForThePages" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
+                    <a href="https://instagram.com/OneForThePages" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="https://www.linkedin.com/company/oneforthepages" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                </div>
+            </div>
+
+            <!-- Embedded Google Map for Business Location -->
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5043.8842650698525!2d-1.087255!3d50.795181!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48745da1df4b6895%3A0x46210ff7bd68867e!2sWinston%20Churchill%20Ave%2C%20Portsmouth!5e0!3m2!1sen!2suk!4v1742243345835!5m2!1sen!2suk" 
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2025 One for the Pages | UP2294517  | <a href="privacy.html">Privacy Policy</a> <!-- Copyright notice, Student ID and privacy link -->
+    </footer>
+
+</body>
+</html>

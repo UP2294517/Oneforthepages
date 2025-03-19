@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Defines this as an HTML5 document -->
+    <meta charset="UTF-8"> <!-- Defines character encoding to support special characters -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Enables mobile responsiveness -->
+
+    <title id="page-title">One for the Pages</title> <!-- Default title, updated dynamically -->
+
+    <!-- External CSS Stylesheets -->
+    <link rel="stylesheet" href="assets/css/template-styles.css"> <!-- Global template styles -->
+    <link rel="stylesheet" href="assets/css/product-styles.css"> <!-- Styles specific to product page -->
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- JavaScript Files -->
+    <script defer src="assets/js/product.js"></script> <!-- Loads book data dynamically -->
+</head>
+
+<body>
+    <!-- Decorative Page Edges -->
+    <div class="edge-left"></div>
+    <div class="edge-right"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="categories.html">Book Categories</a></li>
+            <li><a href="cart.html">Shopping Cart</a></li>
+            <li><a href="login.html">Login</a></li>
+        </ul>
+
+        <!-- Search Bar -->
+        <form id="search-form" action="search.html" method="GET">
+            <input type="text" id="search-input" name="query" placeholder="Search books..." required>
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </form>
+    </nav>
+
+    <!-- Hero Section (Book Title Banner) -->
+    <header class="product-hero">
+        <div class="hero-content">
+            <h1 id="product-title">Loading...</h1> <!-- Updated dynamically -->
+        </div>
+    </header>
+
+    <!-- Breadcrumbs Navigation (Shows page hierarchy) -->
+    <nav class="breadcrumbs">
+        <a href="index.html">Home</a> >
+        <a href="categories.html">Book Categories</a> >
+        <a id="breadcrumb-category" href="#">Category</a> >
+        <span id="breadcrumb-title">Product Name</span>
+    </nav>
+
+    <!-- Product Details Section -->
+    <section class="product-section">
+        <div class="product-container">
+            <!-- Book Image -->
+            <div class="product-image">
+                <img id="product-img" src="assets/img/default-book.jpg" alt="Book Cover">
+            </div>
+            <!-- Book Info -->
+            <div class="product-info">
+                 <h2 id="product-author">Author Loading...</h2><!-- Author's Name -->
+                 <p id="product-description">Loading book details...</p> <!-- Book Description -->
+                 <p id="product-price" class="price"></p> <!-- Price -->
+                 <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button> <!-- Button to add book to cart -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section class="reviews-section">
+        <h2>Customer Reviews</h2>
+
+        <!-- List of Reviews -->
+        <div id="reviews-list">
+            <p>No reviews yet. Be the first to review this book!</p> <!-- Default message if no reviews -->
+        </div>
+
+        <!-- Review Submission Form -->
+        <div class="review-form">
+            <h3>Leave a Review</h3>
+            
+            <label for="review-name">Name:</label>
+            <input type="text" id="review-name" placeholder="Your Name" required>
+
+            <label for="review-rating">Rating:</label>
+            <select id="review-rating" required>
+                <option value="" disabled selected>Select a rating</option>
+                <option value="5">★★★★★ (5 Stars)</option>
+                <option value="4">★★★★☆ (4 Stars)</option>
+                <option value="3">★★★☆☆ (3 Stars)</option>
+                <option value="2">★★☆☆☆ (2 Stars)</option>
+                <option value="1">★☆☆☆☆ (1 Star)</option>
+            </select>
+
+            <label for="review-text">Review:</label>
+            <textarea id="review-text" placeholder="Write your review here..." required></textarea>
+
+            <button onclick="submitReview()">Submit Review</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2025 One for the Pages | UP2294517 | <a href="privacy.html">Privacy Policy</a><!-- Copyright notice, Student ID and privacy policy link -->
+
+    </footer>
+
+    <!-- JavaScript to Load Product Details -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productId = urlParams.get("id");
+
+            // Load product details from product.js
+            if (productId && books[productId]) {
+                const product = books[productId];
+
+                // Update product details dynamically
+                document.getElementById("product-title").innerText = product.title;
+                document.getElementById("product-author").innerText = "by " + product.author;
+                document.getElementById("product-description").innerText = product.description;
+                document.getElementById("product-price").innerText = product.price;
+                document.getElementById("product-img").src = product.image;
+                document.getElementById("page-title").innerText = product.title + " | One for the Pages";
+
+                // Update breadcrumbs
+                document.getElementById("breadcrumb-category").innerText = product.category;
+                document.getElementById("breadcrumb-category").href = product.category.toLowerCase().replace(/ /g, '') + ".html";
+                document.getElementById("breadcrumb-title").innerText = product.title;
+            } else {
+                document.getElementById("product-title").innerText = "Product Not Found";
+                document.getElementById("product-description").innerText = "Sorry, the requested product does not exist.";
+            }
+
+            // Load existing reviews
+            loadReviews();
+        });
+
+        // Function to handle adding a book to the cart
+        function addToCart() {
+            alert("Book added to cart!");
+        }
+
+        // ===============================
+        // Customer Review and Rating System
+        // ===============================
+
+        // Function to retrieve and display reviews
+        function loadReviews() {
+            const reviewsList = document.getElementById("reviews-list");
+            reviewsList.innerHTML = ""; // Clear existing reviews
+
+            const storedReviews = JSON.parse(localStorage.getItem(`reviews-${productId}`)) || [];
+
+            if (storedReviews.length === 0) {
+                reviewsList.innerHTML = "<p>No reviews yet. Be the first to review this book!</p>";
+            } else {
+                storedReviews.forEach(review => {
+                    const reviewItem = document.createElement("div");
+                    reviewItem.classList.add("review-item");
+
+                    reviewItem.innerHTML = `
+                        <strong>${review.name}</strong> - <span class="rating">${"★".repeat(review.rating)}${"☆".repeat(5 - review.rating)}</span>
+                        <p>${review.comment}</p>
+                        <hr>
+                    `;
+                    reviewsList.appendChild(reviewItem);
+                });
+            }
+        }
+
+        // Function to handle review submission
+        function submitReview() {
+            const name = document.getElementById("review-name").value.trim();
+            const rating = parseInt(document.getElementById("review-rating").value);
+            const comment = document.getElementById("review-text").value.trim();
+
+            if (name === "" || comment === "") {
+                alert("Please enter your name and a review.");
+                return;
+            }
+
+            const newReview = { name, rating, comment };
+
+            // Retrieve existing reviews or create a new array
+            const storedReviews = JSON.parse(localStorage.getItem(`reviews-${productId}`)) || [];
+            storedReviews.push(newReview);
+
+            // Save to localStorage
+            localStorage.setItem(`reviews-${productId}`, JSON.stringify(storedReviews));
+
+            // Reload reviews
+            loadReviews();
+
+            // Clear form inputs
+            document.getElementById("review-name").value = "";
+            document.getElementById("review-text").value = "";
+            document.getElementById("review-rating").value = "5";
+
+            alert("Thank you for your review!");
+        }
+    </script>
+
+</body>
+</html>
