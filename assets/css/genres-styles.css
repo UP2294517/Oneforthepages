@@ -1,0 +1,275 @@
+/* ===================================================
+   GLOBAL STYLING (Applies to the entire Category Page)
+   =================================================== */
+
+.category-page {
+    background: none; /* No full-page background */
+    color: #f5f5f5; /* Light text for readability */
+    text-align: center;
+    min-height: 100vh; /* Ensures full-page height */
+    display: flex;
+    flex-direction: column; /* Ensures proper page structure */
+}
+
+/* ===================================================
+   HERO SECTION (Top Banner with Page Title)
+   =================================================== */
+
+.category-hero {
+    background: url('../img/top_banner.png') no-repeat center top; /* Sets hero banner image */
+    background-size: cover; /* Ensures full coverage */
+    height: 250px; /* Consistent banner height */
+    display: flex;
+    align-items: center; /* Centers text vertically */
+    justify-content: center; /* Centers text horizontally */
+    text-align: center; /* Ensures text alignment */
+    width: 100%;
+    margin-bottom: 10px; /* Adds spacing for the sub-navbar */
+}
+
+/* Hero title styling */
+.category-hero h1 {
+    font-size: 56px; /* Large font for emphasis */
+    font-weight: bold;
+    font-family: 'Playfair Display', serif; /* Stylish serif font */
+    color: white;
+    text-transform: uppercase; /* Capitalizes text */
+    letter-spacing: 2px; /* Adds spacing between letters */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Enhances readability */
+}
+
+/* ===================================================
+   SEARCH BAR STYLING
+   =================================================== */
+
+#search-form {
+    display: flex;
+    align-items: center;
+    background-color: #222; /* Dark background */
+    border-radius: 20px;
+    padding: 5px;
+    position: relative;
+}
+
+/* Input field inside the search bar */
+#search-input {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    width: 200px;
+    background-color: #222;
+    color: #f5f5f5;
+    transition: width 0.3s ease-in-out; /* Smooth width transition */
+}
+
+/* Placeholder text styling */
+#search-input::placeholder {
+    color: #ccc; /* Light grey placeholder text */
+}
+
+/* Search button */
+#search-form button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left: 8px;
+    padding: 5px;
+}
+
+/* Search icon inside the button */
+#search-form button i {
+    font-size: 18px;
+    color: #d4af37; /* Gold icon color */
+}
+
+/* Hover effect for search button */
+#search-form button:hover i {
+    color: #b89c33; /* Darker gold */
+}
+
+/* ===================================================
+   CATEGORY SECTION LAYOUT (Filters & Products)
+   =================================================== */
+
+.category-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 50px 5%;
+    position: relative;
+    flex-grow: 1;
+}
+
+/* ===================================================
+   FILTERS SECTION (Left Side Panel)
+   =================================================== */
+
+.filters {
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(0, 0, 0, 0.6); /* Dark background */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds depth */
+}
+
+/* Filter label styling */
+.filters label {
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+/* Dropdown select boxes inside the filters */
+.filters select {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* ===================================================
+   PRODUCT LISTINGS SECTION (Right Side)
+   =================================================== */
+
+.product-grid {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adds spacing between products */
+}
+
+/* ===================================================
+   PRODUCT CARD STYLING (Individual Product Display)
+   =================================================== */
+
+.product-card {
+    background: rgba(0, 0, 0, 0.7); /* Dark background */
+    padding: 20px;
+    border-radius: 8px; /* Rounded edges */
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds shadow for depth */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+/* Product image inside the card */
+.product-card img {
+    width: 80px;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+/* Ensures links inside product cards have the right color */
+.product-card a {
+    color: #d4af37; /* Gold */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hover effect for links inside product cards */
+.product-card a:hover {
+    color: #b89c33;
+    text-decoration: underline;
+}
+
+/* Text content inside the product card */
+.product-card .info {
+    flex-grow: 1;
+    text-align: left;
+}
+
+/* Product title inside the card */
+.product-card h2 {
+    font-size: 22px;
+    color: #d4af37;
+}
+
+/* Product description text */
+.product-card p {
+    font-size: 16px;
+    color: #ddd;
+}
+
+/* Product price styling */
+.product-card .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+}
+
+/* ===================================================
+   ADD TO CART BUTTON
+   =================================================== */
+
+.product-card .btn {
+    background-color: #d4af37; /* Gold button */
+    color: #111;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Hover effect for Add to Cart button */
+.product-card .btn:hover {
+    background-color: #b89c33; /* Darker gold */
+}
+
+/* ===================================================
+   FOOTER (Ensures it Stays at the Bottom)
+   =================================================== */
+
+.footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: #111; /* Dark footer */
+    color: #f5f5f5; /* White text */
+    text-align: center;
+    margin-top: auto;
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN (For smaller screens)
+   =================================================== */
+
+@media screen and (max-width: 768px) {
+    .category-section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Filters take up full width on small screens */
+    .filters {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    /* Product grid adjusts for small screens */
+    .product-grid {
+        width: 100%;
+    }
+
+    /* Product card adjusts for mobile */
+    .product-card {
+        width: 90%;
+        margin: auto;
+    }
+
+    /* Footer remains at the bottom */
+    .footer {
+        position: relative;
+    }
+}

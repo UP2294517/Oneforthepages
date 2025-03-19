@@ -1,0 +1,199 @@
+/* ===================================================
+   GLOBAL STYLING (Applies to the entire Login Page)
+   =================================================== */
+
+.login-page {
+    background: none; /* No unnecessary background */
+    color: #f5f5f5; /* Light text for readability */
+    text-align: center;
+    min-height: 100vh; /* Ensures the page fills the viewport height */
+    display: flex;
+    flex-direction: column; /* Ensures proper page structure */
+}
+
+/* ===================================================
+   HERO SECTION (Top Banner with Page Title)
+   =================================================== */
+
+.login-hero {
+    background: url('../img/top_banner.png') no-repeat center top; /* Hero banner image */
+    background-size: cover; /* Ensures full coverage */
+    height: 250px; /* Consistent banner height */
+    display: flex;
+    align-items: center; /* Centers text vertically */
+    justify-content: center; /* Centers text horizontally */
+    text-align: center; /* Ensures text alignment */
+    width: 100%;
+    margin-bottom: 10px; /* Adds spacing below */
+}
+
+/* Hero title styling */
+.login-hero h1 {
+    font-size: 56px; /* Large font for emphasis */
+    font-weight: bold;
+    font-family: 'Playfair Display', serif; /* Stylish serif font */
+    color: white;
+    text-transform: uppercase; /* Capitalizes text */
+    letter-spacing: 2px; /* Adds spacing between letters */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Enhances readability */
+}
+
+/* ===================================================
+   LOGIN SECTION (Form Container & Input Fields)
+   =================================================== */
+
+.login-section {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Centers the form */
+    align-items: center; /* Centers the form vertically */
+}
+
+/* Login Form Container */
+.login-container {
+    background: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
+    padding: 30px;
+    border-radius: 10px; /* Rounded edges */
+    width: 400px; /* Fixed width for form */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds depth */
+}
+
+/* Form Title */
+.login-container h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #d4af37; /* Gold title */
+}
+
+/* Form Layout */
+.login-container form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Labels for input fields */
+.login-container label {
+    font-size: 18px;
+    color: #f5f5f5;
+    margin-bottom: 5px;
+    text-align: left;
+    width: 100%;
+}
+
+/* Input Fields */
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    background: #222; /* Dark input fields for contrast */
+    color: #f5f5f5;
+}
+
+/* ===================================================
+   LOGIN BUTTON (Submit Button)
+   =================================================== */
+
+.login-btn {
+    background-color: #d4af37; /* Gold button */
+    color: #111;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Hover effect for login button */
+.login-btn:hover {
+    background-color: #b89c33; /* Darker gold */
+}
+
+/* ===================================================
+   LOGIN OPTIONS (Forgot Password & Sign Up Links)
+   =================================================== */
+
+.login-options {
+    margin-top: 15px;
+}
+
+/* Styling for the login options (forgot password & sign-up links) */
+.login-options a {
+    color: #d4af37;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Hover effect for login option links */
+.login-options a:hover {
+    text-decoration: underline;
+}
+
+/* ===================================================
+   FOOTER (Ensures it Stays at the Bottom)
+   =================================================== */
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: #111; /* Dark footer */
+    color: #f5f5f5; /* White text */
+    text-align: center;
+    margin-top: auto; /* Pushes footer to bottom */
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN (For smaller screens)
+   =================================================== */
+
+@media screen and (max-width: 768px) {
+    /* Ensures the login container adjusts properly */
+    .login-container {
+        width: 90%;
+    }
+
+    /* Adjusts heading sizes for smaller screens */
+    .login-hero h1 {
+        font-size: 42px;
+    }
+}
+
+/* ===================================================
+   FIXED DECORATIVE PAGE EDGES (Left & Right Borders)
+   =================================================== */
+
+/* Left Decorative Edge */
+.edge-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100vh;
+    background: url('../img/edge_left.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.2;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Right Decorative Edge */
+.edge-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100vh;
+    background: url('../img/edge_right.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.2;
+    z-index: -1;
+    pointer-events: none;
+}

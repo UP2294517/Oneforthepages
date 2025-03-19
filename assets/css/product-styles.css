@@ -1,0 +1,299 @@
+/* ===================================================
+   GLOBAL STYLING (Applies to the entire Product Page)
+   =================================================== */
+
+html, body {
+    height: 100%; /* Ensures full-page height */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; /* Keeps layout structured */
+}
+
+/* Ensures product page content takes up remaining space */
+.product-page {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Pushes footer to the bottom */
+}
+
+/* ===================================================
+   NAVBAR (Fixed at the Top)
+   =================================================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #111; /* Dark navbar for contrast */
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+/* ===================================================
+   HERO SECTION (Top Banner)
+   =================================================== */
+
+.product-hero {
+    background: url('../img/top_banner.png') no-repeat center top; /* Hero banner image */
+    background-size: cover; /* Ensures full coverage */
+    height: 250px; /* Consistent banner height */
+    display: flex;
+    align-items: center; /* Centers text vertically */
+    justify-content: center; /* Centers text horizontally */
+    text-align: center;
+    width: 100%;
+    margin-top: 60px; /* Prevents overlap with navbar */
+    margin-bottom: 10px;
+}
+
+/* Hero title styling */
+.product-hero h1 {
+    font-size: 56px; /* Large font for emphasis */
+    font-weight: bold;
+    font-family: 'Playfair Display', serif; /* Stylish serif font */
+    color: white;
+    text-transform: uppercase; /* Capitalizes text */
+    letter-spacing: 2px; /* Adds spacing between letters */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Enhances readability */
+}
+
+/* ===================================================
+   BREADCRUMBS NAVIGATION
+   =================================================== */
+
+.breadcrumbs {
+    background-color: #111; /* Matches navbar color */
+    color: #d4af37; /* Gold text */
+    padding: 12px 10%;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: left;
+    border-radius: 5px;
+    margin-top: -10px;
+}
+
+/* Breadcrumb links */
+.breadcrumbs a {
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Hover effect for breadcrumb links */
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+
+/* Breadcrumb text separator */
+.breadcrumbs span {
+    color: #f5f5f5;
+}
+
+/* ===================================================
+   PRODUCT SECTION (Main Product Display)
+   =================================================== */
+
+.product-section {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 5%;
+}
+
+/* ===================================================
+   PRODUCT CONTAINER (Holds Image & Details)
+   =================================================== */
+
+.product-container {
+    display: flex;
+    background: rgba(0, 0, 0, 0.7); /* Dark background */
+    padding: 30px;
+    border-radius: 10px;
+    width: 60%;
+    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ===================================================
+   PRODUCT IMAGE
+   =================================================== */
+
+.product-image img {
+    width: 250px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* ===================================================
+   PRODUCT INFO (Title, Author, Description, Price)
+   =================================================== */
+
+.product-info {
+    flex-grow: 1;
+    text-align: left;
+    padding: 0 20px;
+}
+
+/* Product title */
+.product-info h1 {
+    font-size: 32px;
+    color: white;
+    text-transform: uppercase;
+}
+
+/* Product author */
+.product-info h2 {
+    font-size: 24px;
+    margin-top: 5px;
+    color: #f5f5f5;
+}
+
+/* Product description */
+.product-info p {
+    font-size: 18px;
+    color: #ddd;
+    margin-top: 10px;
+}
+
+/* ===================================================
+   PRICE & ADD TO CART BUTTON
+   =================================================== */
+
+.price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #d4af37; /* Gold color for emphasis */
+    margin-top: 10px;
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+    background-color: #d4af37;
+    color: #111;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* Hover effect for Add to Cart button */
+.add-to-cart-btn:hover {
+    background-color: #b89c33;
+}
+
+/* ===================================================
+   FOOTER (Stays at the Bottom)
+   =================================================== */
+
+.footer {
+    width: 100%;
+    background-color: #111; /* Dark footer */
+    padding: 15px;
+    color: #f5f5f5; /* White text */
+    text-align: center;
+    margin-top: auto;
+}
+
+/* ===================================================
+   REVIEW SECTION (User Reviews)
+   =================================================== */
+
+.reviews-section {
+    margin: 40px auto;
+    width: 60%;
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    color: #f5f5f5;
+}
+
+/* Review Form */
+.review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Form fields */
+.review-form input,
+.review-form select,
+.review-form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #f5f5f5;
+    color: #111;
+}
+
+/* Placeholder styling */
+.review-form input::placeholder,
+.review-form textarea::placeholder {
+    color: #666;
+}
+
+/* Submit button */
+.review-form button {
+    background-color: #d4af37;
+    color: #111;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Hover effect for submit button */
+.review-form button:hover {
+    background-color: #b89c33;
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN (For smaller screens)
+   =================================================== */
+
+@media screen and (max-width: 768px) {
+    .product-container {
+        flex-direction: column;
+        width: 90%;
+        text-align: center;
+    }
+
+    .product-image img {
+        width: 200px;
+    }
+
+    .product-info {
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .product-info h1 {
+        font-size: 28px;
+    }
+
+    .product-info h2 {
+        font-size: 20px;
+    }
+
+    .breadcrumbs {
+        text-align: center;
+        font-size: 16px;
+    }
+
+    .reviews-section {
+        width: 90%;
+    }
+}

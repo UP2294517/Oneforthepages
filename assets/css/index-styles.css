@@ -1,0 +1,199 @@
+/* ===================================================
+   GLOBAL STYLING (Applies to the whole website)
+   =================================================== */
+
+body {
+    font-family: 'Playfair Display', serif; /* Sets a stylish serif font for the entire site */
+    background: url('../img/index_background.png') no-repeat center center fixed; /* Background image covering the entire page */
+    background-size: cover; /* Ensures background image fits properly */
+    color: #f5f5f5; /* Sets default text color to light grey */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Ensures the body takes up at least the full viewport height */
+}
+
+/* ===================================================
+   HERO SECTION (Banner at the top of the page)
+   =================================================== */
+
+.hero {
+    background: none;
+    position: relative;
+    height: 80vh; /* Sets height to 80% of the viewport height */
+    display: flex;
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+    text-align: center; /* Centers text inside */
+}
+
+/* Removes any existing pseudo-elements (e.g., background overlays) */
+.hero::before {
+    display: none;
+}
+
+/* Ensures text appears on top of background */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+/* Main heading inside the hero section */
+.hero h1 {
+    font-size: 48px; /* Large, prominent text */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a subtle text shadow for readability */
+}
+
+/* Subtitle or description text in the hero section */
+.hero p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+/* Call-to-action button in the hero section */
+.hero .btn {
+    background-color: #d4af37; /* Gold color */
+    color: #111; /* Dark text */
+    padding: 12px 20px;
+    border: none;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+/* Button hover effect */
+.hero .btn:hover {
+    background-color: #b89c33; /* Darker shade of gold */
+}
+
+/* ===================================================
+   BOOK LISTINGS SECTION (Book display area)
+   =================================================== */
+
+.books-section {
+    padding: 50px 5%; /* Adds space around the section */
+    text-align: center; /* Centers headings */
+}
+
+/* Section heading */
+.books-section h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+/* Links inside book titles */
+.books-section h3 a {
+    color: #d4af37 !important; /* Gold Yellow */
+    text-decoration: none !important;
+    font-weight: bold;
+}
+
+/* Hover effect for book title links */
+.books-section h3 a:hover {
+    color: #b89c33 !important; /* Darker Gold for Hover */
+    text-decoration: underline !important;
+}
+
+/* Individual book cards */
+.book-card {
+    background: #222; /* Dark background for contrast */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    margin: 15px;
+    display: inline-block; /* Allows multiple book cards to sit side-by-side */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a slight shadow effect */
+    width: 250px;
+}
+
+/* Book images inside cards */
+.book-card img {
+    width: 100%; /* Makes images responsive within the card */
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Book title inside the card */
+.book-card h3 {
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+/* Book description text */
+.book-card p {
+    font-size: 16px;
+    color: #aaa; /* Light grey text */
+}
+
+/* Call-to-action button inside book cards */
+.book-card .btn {
+    display: block;
+    background-color: #d4af37;
+    color: #111;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+/* Hover effect for book card button */
+.book-card .btn:hover {
+    background-color: #b89c33;
+}
+
+/* ===================================================
+   FOOTER (Bottom of the page)
+   =================================================== */
+
+.footer {
+    background-color: #111; /* Dark footer for contrast */
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN (For smaller screens)
+   =================================================== */
+
+@media screen and (max-width: 768px) {
+    /* Adjusts navbar for mobile devices */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar li {
+        margin-bottom: 10px;
+    }
+
+    /* Adjusts cart container width for smaller screens */
+    .cart-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Reduces font size for cart table on small screens */
+    .cart-table th, .cart-table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Ensures cart summary is fully visible on smaller screens */
+    .cart-summary {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Ensures checkout button spans full width on small screens */
+    .checkout-btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,304 @@
+/* ===================================================
+   GLOBAL STYLING (Applies to the entire Shopping Cart Page)
+   =================================================== */
+
+.cart-page {
+    background: none;
+    color: #f5f5f5; /* Light text for readability */
+    text-align: center;
+    min-height: 100vh; /* Ensures the cart page fills the viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===================================================
+   HERO SECTION (Top Banner with Page Title)
+   =================================================== */
+
+.cart-hero {
+    background: url('../img/top_banner.png') no-repeat center top; /* Sets the background banner */
+    background-size: cover; /* Ensures full coverage */
+    height: 250px; /* Defines fixed height */
+    display: flex;
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+    text-align: center; /* Centers text */
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Styles the heading inside the hero banner */
+.cart-hero h1 {
+    font-size: 56px;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif; /* Stylish serif font */
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px; /* Adds spacing between letters */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Enhances readability */
+}
+
+/* ===================================================
+   SHOPPING CART SECTION (Main Content)
+   =================================================== */
+
+.cart-section {
+    flex: 1;
+    padding: 50px 5%;
+    text-align: center;
+}
+
+/* Shopping Cart Title */
+.cart-section h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #f5f5f5;
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* ===================================================
+   CART CONTAINER (Holds the cart table & summary)
+   =================================================== */
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.7); /* Dark background with transparency */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds depth */
+}
+
+/* ===================================================
+   CART TABLE (Displays the list of cart items)
+   =================================================== */
+
+.cart-table {
+    width: 100%;
+    border-collapse: collapse; /* Removes extra space between table borders */
+    margin-bottom: 20px;
+}
+
+/* Table header styling */
+.cart-table thead {
+    background: #222; /* Dark background for contrast */
+}
+
+/* Table headings and cell content */
+.cart-table th, .cart-table td {
+    padding: 15px;
+    text-align: center;
+}
+
+/* Table header text styling */
+.cart-table th {
+    font-size: 18px;
+    color: #d4af37; /* Gold color for headings */
+}
+
+/* Table cell content */
+.cart-table td {
+    font-size: 16px;
+    color: #ddd; /* Light grey text */
+    border-bottom: 1px solid #444; /* Subtle row separation */
+}
+
+/* ===================================================
+   CART ITEM STYLING (Each item row inside the table)
+   =================================================== */
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Book image inside cart */
+.cart-item img {
+    width: 60px;
+    height: auto;
+    border-radius: 5px; /* Rounded corners */
+    margin-right: 15px;
+}
+
+/* Book title text inside cart */
+.cart-item span {
+    font-size: 18px;
+}
+
+/* ===================================================
+   QUANTITY SELECTOR (Input field for adjusting quantity)
+   =================================================== */
+
+.cart-table input[type="number"] {
+    width: 50px;
+    padding: 5px;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background: #222; /* Dark background */
+    color: #fff;
+}
+
+/* ===================================================
+   REMOVE BUTTON (Trash icon to remove item from cart)
+   =================================================== */
+
+.remove-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: #d9534f; /* Red color for delete button */
+}
+
+/* Remove button hover effect */
+.remove-btn:hover {
+    color: #c9302c; /* Darker red */
+}
+
+/* ===================================================
+   CART SUMMARY (Subtotal, Tax, and Total Calculation)
+   =================================================== */
+
+.cart-summary {
+    text-align: center;
+    background: rgba(20, 20, 20, 0.8); /* Dark background */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    width: 50%;
+    margin: auto;
+}
+
+/* Cart summary heading */
+.cart-summary h2 {
+    font-size: 24px;
+    color: #d4af37; /* Gold color for emphasis */
+    margin-bottom: 15px;
+}
+
+/* Text inside cart summary */
+.cart-summary p {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #ddd;
+}
+
+/* ===================================================
+   CHECKOUT BUTTON (Proceed to checkout)
+   =================================================== */
+
+.checkout-btn {
+    background-color: #d4af37;
+    color: #111;
+    padding: 12px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* Hover effect for checkout button */
+.checkout-btn:hover {
+    background-color: #b89c33;
+}
+
+/* ===================================================
+   FOOTER (Bottom of the Page)
+   =================================================== */
+
+.footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: #111; /* Dark background */
+    color: #f5f5f5; /* White text */
+    text-align: center;
+    margin-top: auto;
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN (For mobile screens)
+   =================================================== */
+
+@media screen and (max-width: 768px) {
+    /* Adjusts navbar layout for smaller screens */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar li {
+        margin-bottom: 10px;
+    }
+
+    /* Ensures cart container adjusts properly on small screens */
+    .cart-container {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Reduces font size for table elements */
+    .cart-table th, .cart-table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Ensures cart summary fits smaller screens */
+    .cart-summary {
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* Expands checkout button width */
+    .checkout-btn {
+        width: 100%;
+    }
+}
+
+/* ===================================================
+   FIXED PAGE DECORATIVE EDGES (Left & Right Borders)
+   =================================================== */
+
+/* Left Decorative Edge */
+.edge-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 100vh;
+    background: url('../img/edge_left.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.2;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Right Decorative Edge */
+.edge-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 100vh;
+    background: url('../img/edge_right.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.2;
+    z-index: -1;
+    pointer-events: none;
+}

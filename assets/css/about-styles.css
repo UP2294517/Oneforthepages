@@ -1,0 +1,221 @@
+/* ===================================================
+   GLOBAL STYLING (Applies to the entire website)
+   =================================================== */
+
+body {
+    font-family: 'Playfair Display', serif; /* Sets a stylish serif font */
+    color: #f5f5f5; /* Default text color (light grey) */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Ensures the page takes up the full viewport height */
+}
+
+/* ===================================================
+   HERO SECTION (Top banner with page title)
+   =================================================== */
+
+.about-hero {
+    background: url('../img/top_banner.png') no-repeat center top; /* Background image */
+    background-size: cover; /* Ensures full coverage */
+    height: 250px; /* Sets fixed height for banner */
+    display: flex;
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally */
+    text-align: center; /* Centers text */
+}
+
+/* Styles the main heading in the hero section */
+.about-hero h1 {
+    font-size: 48px; /* Matches index page heading */
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for readability */
+    color: white;
+    text-transform: uppercase; /* Ensures uppercase text */
+}
+
+/* Styles subtitle text below the main heading */
+.about-hero p {
+    font-size: 20px;
+    margin-top: 10px;
+    color: #d4af37; /* Gold color for emphasis */
+}
+
+/* ===================================================
+   ABOUT SECTION (Our Story and Mission)
+   =================================================== */
+
+.about-section {
+    padding: 60px 5%; /* Adds padding for spacing */
+    text-align: center;
+    color: #f5f5f5; /* White text for readability */
+}
+
+/* Container for content inside About Section */
+.about-section .container {
+    max-width: 800px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.7); /* Adds dark transparency for contrast */
+    padding: 30px;
+    border-radius: 10px; /* Rounded corners for a softer design */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow for depth */
+}
+
+/* Section headings */
+.about-section h2 {
+    font-size: 28px;
+    color: #d4af37; /* Gold color for emphasis */
+    margin-top: 20px;
+}
+
+/* Paragraph styling inside About Section */
+.about-section p {
+    font-size: 18px;
+    line-height: 1.6; /* Improves readability */
+    color: #ddd; /* Light grey text */
+}
+
+/* ===================================================
+   TEAM SECTION (Meet Our Team)
+   =================================================== */
+
+.team-section {
+    text-align: center;
+    padding: 60px 5%;
+}
+
+/* Team section heading */
+.team-section h2 {
+    font-size: 32px;
+    color: #d4af37; /* Gold heading for emphasis */
+    margin-bottom: 20px;
+}
+
+/* ===================================================
+   TEAM GRID (Aligns team members in a structured layout)
+   =================================================== */
+
+.team-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Adds spacing between cards */
+    flex-wrap: wrap; /* Allows wrapping for smaller screens */
+    max-width: 900px;
+    margin: auto;
+}
+
+/* ===================================================
+   TEAM CARDS (Each team member's information)
+   =================================================== */
+
+.team-card {
+    background: rgba(0, 0, 0, 0.7); /* Dark background for contrast */
+    padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    text-align: center;
+    width: 250px; /* Fixed width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adds shadow for depth */
+    transition: transform 0.3s ease; /* Adds smooth hover animation */
+}
+
+/* Profile pictures inside team cards */
+.team-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Circular images */
+    margin-bottom: 15px;
+}
+
+/* Team member's name */
+.team-card h3 {
+    font-size: 22px;
+    color: #d4af37; /* Gold text for emphasis */
+    margin-bottom: 10px;
+}
+
+/* Team member's role/description */
+.team-card p {
+    font-size: 16px;
+    color: #ccc; /* Light grey text */
+}
+
+/* Hover effect for team cards */
+.team-card:hover {
+    transform: translateY(-5px); /* Moves card up slightly */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Enhances shadow for depth */
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN (For mobile-friendly adjustments)
+   =================================================== */
+
+@media screen and (max-width: 768px) {
+    /* Adjusts navbar for mobile devices */
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar li {
+        margin-bottom: 10px;
+    }
+
+    /* Ensures proper spacing for the about section */
+    .about-section {
+        padding: 40px 5%;
+    }
+
+    /* Ensures team section is mobile-friendly */
+    .team-section {
+        padding: 40px 5%;
+    }
+
+    /* Adjusts team grid for smaller screens */
+    .team-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Ensures team cards take full width */
+    .team-card {
+        width: 90%;
+    }
+}
+
+/* ===================================================
+   FIXED LEFT EDGE DESIGN ELEMENT
+   =================================================== */
+
+.edge-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100px; /* Adjust width as needed */
+    height: 100vh;
+    background: url('../img/edge_left.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.2; /* 20% Transparency */
+    z-index: -1; /* Ensures it stays behind other content */
+    pointer-events: none; /* Prevents interaction interference */
+}
+
+/* ===================================================
+   FIXED RIGHT EDGE DESIGN ELEMENT
+   =================================================== */
+
+.edge-right {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100px; /* Adjust width as needed */
+    height: 100vh;
+    background: url('../img/edge_right.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.2; /* 20% Transparency */
+    z-index: -1; /* Ensures it stays behind other content */
+    pointer-events: none; /* Prevents interaction interference */
+}
